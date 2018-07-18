@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "Sublime Fund",
+    "version": "0.1.0",
+    "author": "Sublime Fund, Inc.",
+    "homepage_url": "https://github.com/sublimefund/sublime-fund-webextension",
+    "applications": {
+        "gecko": {
+            "id": "@sublimefund",
+        }
+    }
+}
