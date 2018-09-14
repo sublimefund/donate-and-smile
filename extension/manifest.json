@@ -3,10 +3,14 @@
     "name": "Sublime Fund",
     "version": "0.1.0",
     "author": "Sublime Fund, Inc.",
-    "homepage_url": "https://github.com/sublimefund/sublime-fund-webextension",
+    "homepage_url": "https://sublimefund.org",
     "applications": {
         "gecko": {
-            "id": "@sublimefund",
+            "id": "@sublimefund"
         }
-    }
+    },
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "permissions": ["webRequest", "webRequestBlocking", "https://*.amazon.com/"]
 }

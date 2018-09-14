@@ -1,16 +1,18 @@
 {
-    "name": "sublime-fund-webextension",
+    "name": "sublimefund-webextension",
     "version": "0.1.0",
-    "description": "Official Sublime Fund browser extension",
-    "main": "index.js",
-    "repository": "https://github.com/sublimefund/sublime-fund-webextension",
+    "description": "Sublime Fund browser extension",
+    "repository": "https://github.com/sublimefund/sublimefund-webextension",
     "author": "Sublime Fund",
     "license": "MIT",
+    "scripts": {
+        "start": "yarn install"
+    },
     "devDependencies": {
-        "eslint": "^5.1.0",
-        "eslint-config-prettier": "^2.9.0",
-        "prettier": "^1.13.7",
-        "web-ext": "^2.7.0"
+        "eslint": "^5.5.0",
+        "eslint-config-prettier": "^3.0.1",
+        "prettier": "^1.14.2",
+        "web-ext": "^2.9.1"
     },
     "eslintConfig": {
         "env": {
