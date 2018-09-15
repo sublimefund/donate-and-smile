@@ -6,6 +6,10 @@
     "author": "Sublime Fund",
     "license": "MIT",
     "scripts": {
+        "format": "prettier --write \"./**/*.{json,js}\"",
+        "format:check": "prettier --list-different \"./**/*.{json,js}\"",
+        "lint": "eslint extension && web-ext lint",
+        "release": "web-ext build --overwrite-dest",
         "start": "yarn install"
     },
     "devDependencies": {

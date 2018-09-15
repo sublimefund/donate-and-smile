@@ -12,7 +12,7 @@ function handleRequest(details) {
 
     const url = new URL(details.url);
 
-    console.log(url);
+    // console.log(url);
 
     if (url.hostname === 'www.amazon.com') {
         return {
