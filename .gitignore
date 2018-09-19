@@ -64,3 +64,5 @@ typings/
 *.swo
 
 web-ext-artifacts
+
+.DS_Store

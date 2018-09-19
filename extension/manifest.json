@@ -9,6 +9,10 @@
             "id": "@sublimefund"
         }
     },
+    "icons": {
+        "48": "images/icon.png",
+        "96": "images/icon@2x.png"
+    },
     "background": {
         "scripts": ["background.js"]
     },
