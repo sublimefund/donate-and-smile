@@ -2,7 +2,8 @@
     "manifest_version": 2,
     "name": "Sublime Fund",
     "version": "0.1.0",
-    "author": "Sublime Fund, Inc.",
+    "author": "Sublime Fund Inc.",
+    "description": "Donations made easy. Redirect from Amazon to AmazonSmile.",
     "homepage_url": "https://sublimefund.org",
     "applications": {
         "gecko": {
