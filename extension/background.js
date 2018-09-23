@@ -15,7 +15,10 @@ function handleRequest(details) {
 
     const extension = matches[1];
 
-    const filters = new RegExp('/ap/|redirect=true');
+    // Certain paths don't work with the smile.amazon subdomain
+    const filters = new RegExp(
+        '/ap/|redirect=true|/clouddrive|/wishlist|/dmusic|/yourpets'
+    );
 
     if (filters.test(url.href)) {
         return {};
