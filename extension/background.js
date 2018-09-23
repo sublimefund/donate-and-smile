@@ -1,5 +1,7 @@
 window.browser = window.browser || window.chrome;
 
+let lastRedirectedRequestId = null;
+
 function handleRequest(details) {
     if (details.method !== 'GET') {
         return {};
@@ -15,13 +17,15 @@ function handleRequest(details) {
 
     const extension = matches[1];
 
-    // Certain paths don't work with the smile.amazon subdomain
-    const filters = new RegExp(
-        '/ap/|redirect=true|/clouddrive|/wishlist|/dmusic|/yourpets'
-    );
-
-    if (filters.test(url.href)) {
+    /* Avoid a redirect loop when Amazon tries to redirect the Smile link back
+       to the regular link, but we keep trying to redirect to Smile (an example
+       is amazon.com/gp/goldbox). For a given requestId, which is unique within
+       a browsing session, we will only attempt the redirect once. */
+    if (details.requestId === lastRedirectedRequestId) {
+        lastRedirectedRequestId = null;
         return {};
+    } else {
+        lastRedirectedRequestId = details.requestId;
     }
 
     return {
