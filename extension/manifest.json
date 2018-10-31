@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
-    "name": "Sublime Fund",
+    "name": "Donate and Smile",
     "version": "0.1.0",
     "author": "Sublime Fund Inc.",
-    "description": "Donations made easy. Redirect from Amazon to AmazonSmile.",
+    "description": "Automatically redirect from Amazon to AmazonSmile.",
     "homepage_url": "https://sublimefund.org",
     "applications": {
         "gecko": {
-            "id": "@sublimefund"
+            "id": "donate-and-smile@sublimefund.org"
         }
     },
     "icons": {

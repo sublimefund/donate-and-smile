@@ -1,6 +1,7 @@
-# Sublime Fund browser extension [![Build Status](https://travis-ci.org/sublimefund/sublimefund-webextension.svg?branch=master)](https://travis-ci.org/sublimefund/sublimefund-webextension)
+# Donate and Smile [![Build Status](https://travis-ci.org/sublimefund/donate-and-smile.svg?branch=master)](https://travis-ci.org/sublimefund/donate-and-smile)
 
-This is the official browser extension for [Sublime Fund](https://sublimefund.org/).
+Donate and Smile is a browser extension that will automatically redirect you to
+Amazon Smile.
 
 ## License
 
