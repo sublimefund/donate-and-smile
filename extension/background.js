@@ -1,8 +1,21 @@
 window.browser = window.browser || window.chrome;
 
 let lastRedirectedRequestId = null;
+let redirect = true;
+
+browser.storage.local.get('redirect').then(results => {
+    redirect = results.redirect;
+});
+
+browser.storage.onChanged.addListener(changes => {
+    redirect = changes.redirect.newValue;
+});
 
 function handleRequest(details) {
+    if (!redirect) {
+        return {};
+    }
+
     if (details.method !== 'GET') {
         return {};
     }
