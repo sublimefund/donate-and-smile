@@ -1,8 +1,8 @@
 {
-    "name": "sublimefund-webextension",
+    "name": "donate-and-smile",
     "version": "0.1.0",
-    "description": "Sublime Fund browser extension",
-    "repository": "https://github.com/sublimefund/sublimefund-webextension",
+    "description": "Browser extension for redirecting to AmazonSmile",
+    "repository": "https://github.com/sublimefund/donate-and-smile",
     "author": "Sublime Fund",
     "license": "MIT",
     "scripts": {
