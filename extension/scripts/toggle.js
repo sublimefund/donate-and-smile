@@ -1,5 +1,9 @@
 window.browser = window.browser || window.chrome;
 
+document.getElementById('help').addEventListener('click', () => {
+    window.open(browser.runtime.getURL('help.html'));
+});
+
 function setIcon(redirect) {
     browser.browserAction.setIcon({
         path: `images/icon-128${redirect ? '' : '-greyscale'}.png`

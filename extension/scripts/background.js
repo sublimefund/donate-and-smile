@@ -56,3 +56,10 @@ const filter = {
 browser.webRequest.onBeforeRequest.addListener(handleRequest, filter, [
     'blocking'
 ]);
+
+// Show a help page when the user first installs the extension
+browser.runtime.onInstalled.addListener(details => {
+    if (details.reason === 'install') {
+        browser.tabs.create({url: browser.runtime.getURL('help.html')});
+    }
+});

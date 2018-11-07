@@ -17,18 +17,18 @@
         "128": "images/icon-128.png"
     },
     "background": {
-        "scripts": ["background.js"]
+        "scripts": ["scripts/background.js"]
     },
     "browser_action": {
         "browser_style": true,
         "chrome_style": true,
         "default_icon": "images/icon-128.png",
-        "default_popup": "toggle.html"
+        "default_popup": "toggle-popup.html"
     },
     "options_ui": {
         "browser_style": true,
         "chrome_style": true,
-        "page": "toggle.html"
+        "page": "toggle-options.html"
     },
     "permissions": [
         "storage",
