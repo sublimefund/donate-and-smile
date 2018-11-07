@@ -6,7 +6,7 @@ function setIcon(redirect) {
     });
 }
 
-browser.storage.local.get('redirect').then(results => {
+browser.storage.local.get({redirect: true}).then(results => {
     document.getElementById('redirect').checked = results.redirect;
     setIcon(results.redirect);
 });

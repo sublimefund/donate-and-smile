@@ -3,7 +3,7 @@ window.browser = window.browser || window.chrome;
 let lastRedirectedRequestId = null;
 let redirect = true;
 
-browser.storage.local.get('redirect').then(results => {
+browser.storage.local.get({redirect: true}).then(results => {
     redirect = results.redirect;
 });
 
