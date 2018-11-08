@@ -10,7 +10,9 @@ function setIcon(redirect) {
     });
 }
 
-browser.storage.local.get({redirect: true}).then(results => {
+// Firefox provides the chrome namespace as a porting aid. Just using it is
+// easier than pulling in the webextension-polyfill.
+chrome.storage.local.get({redirect: true}, results => {
     document.getElementById('redirect').checked = results.redirect;
     setIcon(results.redirect);
 });

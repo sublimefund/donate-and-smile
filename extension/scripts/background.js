@@ -3,7 +3,7 @@ window.browser = window.browser || window.chrome;
 let lastRedirectedRequestId = null;
 let redirect = true;
 
-browser.storage.local.get({redirect: true}).then(results => {
+chrome.storage.local.get({redirect: true}, results => {
     redirect = results.redirect;
 });
 
@@ -20,6 +20,15 @@ function handleRequest(details) {
         return {};
     }
 
+    /* Avoid a redirect loop when Amazon tries to redirect the Smile link back
+       to the regular link, but we keep trying to redirect to Smile (an example
+       is amazon.com/gp/goldbox). For a given requestId, which is unique within
+       a browsing session, we will only attempt the redirect once. */
+    if (details.requestId === lastRedirectedRequestId) {
+        lastRedirectedRequestId = null;
+        return {};
+    }
+
     const url = new URL(details.url);
 
     // AmazonSmile is only active in Germany, the U.S., and the U.K.
@@ -30,16 +39,7 @@ function handleRequest(details) {
 
     const extension = matches[1];
 
-    /* Avoid a redirect loop when Amazon tries to redirect the Smile link back
-       to the regular link, but we keep trying to redirect to Smile (an example
-       is amazon.com/gp/goldbox). For a given requestId, which is unique within
-       a browsing session, we will only attempt the redirect once. */
-    if (details.requestId === lastRedirectedRequestId) {
-        lastRedirectedRequestId = null;
-        return {};
-    } else {
-        lastRedirectedRequestId = details.requestId;
-    }
+    lastRedirectedRequestId = details.requestId;
 
     return {
         redirectUrl: `https://smile.amazon.${extension}${url.pathname}${
